@@ -1,0 +1,225 @@
+/* Base Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  height: 80px;
+  background-color: white; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+  width: 100%;
+  position: sticky;
+  top: 0; 
+  z-index: 1000;
+}
+
+/* Logo Styling */
+.navbar-logo a {
+  font-size: 24px;
+  font-weight: 800;
+  color: #0b2e13; 
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.navbar-logo img {
+  width: 60px;
+}
+
+/* --- Menu Wrapper --- */
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  margin-left: auto; 
+}
+
+/* Links List */
+.navbar-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  gap: 24px; 
+}
+
+/* Individual Links */
+.navbar-links a,
+.dropdown-toggle {
+  text-decoration: none;
+  color: #333333;
+  font-size: 15px;
+  font-weight: 500;
+  transition: color 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.navbar-links a:hover,
+.dropdown-toggle:hover {
+  color: #123F19; 
+}
+
+/* Dropdown Button Reset */
+.dropdown-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+}
+
+/* Dropdown Container */
+.dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 80px; 
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  background-color: #ffffff;
+  min-width: 180px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  list-style: none;
+  padding: 8px 0;
+  margin: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-menu li {
+  width: 100%;
+}
+
+.dropdown-menu a {
+  padding: 12px 20px;
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  color: #444444;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f1f5f9;
+  color: #123F19;
+}
+
+/* Call to Action Button */
+.navbar-action {
+  margin-left: 32px; 
+}
+
+.btn-support {
+  background-color: #123F19; 
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-support:hover {
+  background-color: #0c2c11; 
+}
+
+/* Mobile Hamburger Icon (Hidden by default) */
+.mobile-menu-icon {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #0b2e13;
+}
+
+
+/* --- THE FIX: Mobile Responsiveness --- */
+@media (max-width: 992px) {
+  .navbar {
+    padding: 0 20px;
+  }
+
+  .mobile-menu-icon {
+    display: block;
+  }
+
+  /* Fixed positioning anchors the menu to the viewport, ignoring all padding */
+  .navbar-menu {
+    position: fixed;
+    top: 80px; 
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 80px); /* Fills the screen height below the navbar */
+    background-color: #ffffff;
+    padding: 20px 40px;
+    box-sizing: border-box; /* CRITICAL: Stops padding from breaking the width */
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0;
+    overflow-y: auto;
+    
+    /* Pushes it exactly 100% of its own width to the left (totally hidden) */
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  /* When the 'active' class is added, slide it back into view */
+  .navbar-menu.active {
+    transform: translateX(0);
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 0;
+  }
+
+  .navbar-links li {
+    width: 100%;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  .navbar-links a,
+  .dropdown-toggle {
+    display: block;
+    width: 100%;
+    padding: 16px 0;
+    font-size: 16px;
+  }
+
+  .dropdown {
+    height: auto; 
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dropdown-menu {
+    position: static; 
+    box-shadow: none;
+    padding-left: 20px; 
+    background-color: transparent;
+  }
+
+  .dropdown-menu a {
+    padding: 12px 0;
+  }
+
+  .navbar-action {
+    margin-left: 0;
+    margin-top: 24px;
+    width: 100%;
+  }
+
+  .btn-support {
+    width: 100%; 
+  }
+}

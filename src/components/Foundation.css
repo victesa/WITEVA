@@ -1,0 +1,221 @@
+/* =========================================================
+   THE SPLIT BACKGROUND TRICK
+========================================================= */
+.foundation-section {
+  position: relative;
+  /* Deep green top 65%, pure white bottom 35% */
+  background: linear-gradient(to bottom, #123F19 65%, #ffffff 65%);
+  padding: 80px 0 60px 0;
+  font-family: var(--sans);
+}
+
+.foundation-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+/* --- Title --- */
+.foundation-main-title {
+  color: #ffffff;
+  font-family: var(--heading);
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+
+/* --- Mission & Vision Cards --- */
+.foundation-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.f-card {
+  background: rgba(255, 255, 255, 0.05); /* Very subtle tint */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  padding: 24px;
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.f-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.f-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.f-card h3 {
+  color: #ffffff;
+  font-family: var(--heading);
+  font-size: 18px;
+  margin: 0;
+}
+
+.f-icon {
+  width: 24px;
+  height: 24px;
+  color: #ffffff;
+}
+
+.f-card p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* --- Buttons --- */
+.foundation-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 60px;
+}
+
+.btn-story {
+  background: #0d2b12; /* Darker green */
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-counties {
+  background: transparent;
+  color: white;
+  border: 1.5px solid white;
+  padding: 10px 24px;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* --- Video / Feature Block --- */
+.video-feature-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 7;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.video-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Play Button Overlay */
+.play-button-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+
+.play-circle {
+  width: 60px;
+  height: 60px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+
+.play-circle:hover {
+  transform: scale(1.1);
+}
+
+.play-triangle {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 15px solid #123F19; /* Green triangle */
+  margin-left: 4px;
+}
+
+.video-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+/* --- Bottom Learn More --- */
+.learn-more-container {
+  margin-top: 30px;
+}
+
+.btn-learn-more {
+  background: #5b8c5a;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-learn-more span {
+  font-size: 20px;
+  line-height: 1;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+@media (max-width: 768px) {
+  .foundation-section {
+    /* Adjust background split for mobile stack */
+    background: linear-gradient(to bottom, #123F19 75%, #ffffff 75%);
+  }
+  
+  .foundation-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .foundation-main-title {
+    font-size: 26px;
+  }
+
+  .video-feature-wrapper {
+    aspect-ratio: 16 / 9;
+    border-radius: 20px;
+  }
+  
+  .foundation-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-story, .btn-counties {
+    width: 200px;
+  }
+}

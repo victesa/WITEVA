@@ -1,0 +1,196 @@
+/* --- Main Section Wrapper --- */
+.tea-day-section {
+  position: relative;
+  background-color: #fcfcf9; /* Subtle off-white/cream background matching the mockup */
+  padding: 80px 0;
+  overflow: hidden; /* Keeps the massive SVG leaves from breaking the screen width */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* --- SVG Background Watermarks --- */
+/* --- 4-Corner Image Watermarks --- */
+.leaf-watermark {
+  position: absolute;
+  opacity: 2; 
+  width: 450px;
+  height: auto;
+  z-index: 0;
+  pointer-events: none;
+  object-fit: contain;
+}
+
+/* 1. Top Left: Normal orientation */
+.leaf-top-left {
+  top: -50px;
+  left: -200px;
+  transform: rotate(-15deg);
+}
+
+/* 2. Top Right: FLIPPED BOTH WAYS (Horizontal + Vertical) */
+.leaf-top-right {
+  top: -80px;
+  right: -100px;
+  /* scale(-1, -1) flips both axes simultaneously */
+  transform: rotate(20deg) scale(-1, -1);
+}
+
+/* 3. Bottom Left: Flipped horizontally to vary the shape */
+.leaf-bottom-left {
+  bottom: -100px;
+  left: -150px;
+  transform: rotate(40deg) scaleX(-1);
+}
+
+/* 4. Bottom Right: Flipped vertically to anchor the corner */
+.leaf-bottom-right {
+  bottom: -70px;
+  right: -90px;
+  transform: rotate(160deg) scaleY(-1);
+}
+
+/* --- Inner Container --- */
+.tea-day-container {
+  position: relative;
+  z-index: 1; /* Keeps content above the watermark leaves */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* --- Typography --- */
+.tea-day-title {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 800;
+  color: #123F19; /* Deep green from your navbar */
+  letter-spacing: 1px;
+  margin: 0 0 50px 0;
+}
+
+/* --- The Flex Layout --- */
+.tea-day-content {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+/* --- Left Column: Poster --- */
+.tea-day-poster {
+  flex: 0 0 45%; /* Takes up 45% of the space */
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Soft shadow to lift it off the background */
+  /* Adds a subtle border to match the poster aesthetic */
+  border: 1px solid rgba(0,0,0,0.05); 
+}
+
+.tea-day-poster img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --- Right Column: Text --- */
+.tea-day-text {
+  flex: 1; /* Takes up the remaining space */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Aligns the flex items (like the button) to the left */
+  text-align: left; /* THE FIX: Forces all paragraph and heading text to align left */
+}
+
+.tea-day-text h3 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #111827; /* Near black */
+  line-height: 1.3;
+  margin: 0 0 20px 0;
+}
+
+.tea-day-text p {
+  font-size: 16px;
+  color: #4b5563; /* Medium grey for readable body text */
+  line-height: 1.7;
+  margin: 0 0 20px 0;
+}
+
+/* Button */
+.btn-events {
+  margin-top: 10px;
+  background-color: #5b8c5a; /* Muted olive green matching the mockup */
+  color: #ffffff;
+  border: none;
+  padding: 14px 32px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border-radius: 4px; /* Square edges matching the mockup */
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-events:hover {
+  background-color: #4a7549;
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN (Tablets & Mobile)
+========================================================= */
+
+/* Tablets / Medium Laptops */
+@media (max-width: 992px) {
+  .tea-day-content {
+    gap: 40px; /* Tighter gap */
+  }
+
+  .tea-day-title {
+    font-size: 36px;
+  }
+
+  .tea-day-text h3 {
+    font-size: 22px;
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 768px) {
+  .tea-day-section {
+    padding: 60px 0;
+  }
+
+  .tea-day-container {
+    padding: 0 20px;
+  }
+
+  .tea-day-title {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  /* Stack the poster and text vertically */
+  .tea-day-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .tea-day-poster {
+    flex: auto;
+    width: 100%;
+  }
+
+  .tea-day-text {
+    width: 100%;
+  }
+
+  /* Make button full width for easy tapping */
+  .btn-events {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  /* Hide the watermark leaves on mobile to prevent clutter */
+  .leaf-watermark {
+    display: none;
+  }
+}

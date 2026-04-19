@@ -1,0 +1,122 @@
+.cta-section {
+  padding: 80px 0;
+  background-color: #ffffff; /* Sits on the white part of the page */
+}
+
+.cta-card {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #123f19; /* Your signature deep green */
+  border-radius: 32px; /* Matching the soft, rounded theme */
+  padding: 60px 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  box-shadow: 0 20px 40px rgba(18, 63, 25, 0.15);
+}
+
+.cta-content {
+  flex: 1;
+  text-align: left;
+}
+
+.cta-overline {
+  display: block;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+.cta-content h2 {
+  color: #ffffff;
+  font-family: var(--heading);
+  font-size: 35px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0 0 20px 0;
+}
+
+.cta-content p {
+  color: rgba(249, 249, 249, 0.9);
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 700px;
+}
+
+.cta-actions {
+  flex-shrink: 0;
+}
+
+.btn-get-involved {
+  background-color: #ffffff;
+  color: #123f19;
+  border: none;
+  padding: 18px 40px;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  border-radius: 50px; /* Pill shape */
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-get-involved:hover {
+  transform: scale(1.05);
+  background-color: #f8fafc;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1024px) {
+  .cta-card {
+    margin: 0 40px;
+    padding: 50px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cta-content {
+    text-align: left;
+  }
+
+  .cta-content p {
+    margin: 0 auto;
+  }
+
+  .cta-content h2 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .cta-section {
+    padding: 40px 0;
+  }
+
+  .cta-card {
+    margin: 0 20px;
+    padding: 40px 24px;
+    border-radius: 24px;
+  }
+
+  .btn-get-involved {
+    width: 100%;
+  }
+
+  .cta-content {
+    text-align: left;
+  }
+
+  .cta-content p {
+    margin: 0 auto;
+  }
+
+  .cta-content h2 {
+    font-size: 32px;
+  }
+}

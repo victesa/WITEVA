@@ -1,0 +1,184 @@
+/* =========================================================
+   WHO WE ARE SECTION - MAIN LAYOUT
+========================================================= */
+.who-we-are {
+  padding: 100px 0;
+  background-color: #ffffff;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  /* Balanced gap to ensure text and image have breathing room */
+  gap: 80px; 
+}
+
+/* --- Left Side: Content --- */
+.who-content-left {
+  /* Gives text slightly more room than the image */
+  flex: 1.2; 
+  text-align: left;
+}
+
+.about-tag {
+  color: #5b8c5a; /* Action Green */
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.who-content-left h2 {
+  font-family: var(--heading);
+  font-size: 42px;
+  color: #111827; /* Near Black */
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+
+.main-desc {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #4b5563; /* Grey Body Text */
+  margin-bottom: 40px;
+}
+
+/* --- Features Grid (Non-Political / Non-Profit) --- */
+.about-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.feature-item {
+  text-align: left;
+}
+
+.feature-icon {
+  width: 32px;
+  height: 32px;
+  color: #5b8c5a;
+  margin-bottom: 16px;
+}
+
+.feature-item h4 {
+  font-family: var(--heading);
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #111827;
+}
+
+.feature-item p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* --- Action Button --- */
+.btn-join-mission {
+  background: transparent;
+  border: 1px solid #e5e7eb;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-join-mission:hover {
+  background-color: #f9fafb;
+  border-color: #d1d5db;
+  transform: translateY(-1px);
+}
+
+/* --- Right Side: Image wrapper --- */
+.who-content-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.about-image-wrapper {
+  width: 100%;
+  /* Hard cap to prevent the image from squeezing the text column */
+  max-width: 540px; 
+  /* Optimized for landscape photography */
+  aspect-ratio: 3 / 2; 
+  border-radius: 40px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.about-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN
+========================================================= */
+
+/* Tablets & Small Laptops */
+@media (max-width: 1024px) {
+  .about-container {
+    flex-direction: column;
+    gap: 60px;
+    padding: 0 30px;
+  }
+
+  .who-content-left {
+    width: 100%;
+    order: 1;
+  }
+
+  .who-content-right {
+    width: 100%;
+    order: 2;
+    justify-content: flex-start;
+  }
+
+  .about-image-wrapper {
+    max-width: 100%; /* Allows image to fill width on mobile stack */
+  }
+
+  .who-content-left h2 {
+    font-size: 36px;
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 640px) {
+  .who-we-are {
+    padding: 60px 0;
+  }
+
+  .about-features {
+    grid-template-columns: 1fr; /* Stacks the two pillars */
+    gap: 30px;
+  }
+
+  .who-content-left h2 {
+    font-size: 28px;
+  }
+
+  .about-image-wrapper {
+    border-radius: 24px; /* Slightly tighter corners for small screens */
+  }
+
+  .btn-join-mission {
+    width: 100%; /* Full width button for better thumb-reach */
+    text-align: center;
+  }
+}

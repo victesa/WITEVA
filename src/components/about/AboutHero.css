@@ -1,0 +1,29 @@
+.about-hero {
+  position: relative;
+  height: 45vh;
+  min-height: 350px;
+  background-image: url('../../assets/header.jpg');
+  background-size: cover;
+  background-position: center;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  margin-bottom: 80px;
+  overflow: hidden;
+}
+
+.about-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  padding-left: 10%;
+}
+
+.about-hero h1 {
+  color: #ffffff;
+  font-family: var(--heading);
+  font-size: 56px;
+  font-weight: 800;
+  margin: 0;
+}
