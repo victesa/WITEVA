@@ -1,0 +1,121 @@
+/* --- Section Base --- */
+.work-grid-section {
+  padding: 100px 0;
+  background-color: #fcfcfc; /* Light grey to make white cards pop */
+}
+
+.work-grid-container {
+  width: 92%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.work-grid-header {
+  margin-bottom: 50px;
+}
+
+.work-grid-subtitle {
+  color: #5b8c5a;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.work-grid-header h2 {
+  font-size: 36px;
+  margin-top: 10px;
+  color: #111827;
+}
+
+/* --- The Grid Layout --- */
+.work-grid-layout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* --- The Card Fix --- */
+.work-impact-card {
+  text-decoration: none;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column; /* FORCES vertical layout */
+  height: 100%; /* Makes all cards equal height */
+  transition: all 0.3s ease;
+}
+
+.work-impact-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  border-color: #5b8c5a;
+}
+
+/* --- Image Styling --- */
+.work-card-image {
+  width: 100%;
+  aspect-ratio: 16 / 10; /* Keeps all images the exact same size */
+  overflow: hidden;
+}
+
+.work-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- Content Styling --- */
+.work-card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Pushes the "Read More" to the bottom */
+}
+
+.work-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.work-pill {
+  background: #f0fdf4;
+  color: #166534;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+
+.work-date {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.work-card-body h3 {
+  font-size: 19px;
+  color: #111827;
+  line-height: 1.4;
+  margin: 0 0 20px 0;
+  font-weight: 700;
+}
+
+.work-card-link {
+  margin-top: auto; /* Aligns link to bottom */
+  font-size: 14px;
+  font-weight: 600;
+  color: #5b8c5a;
+}
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+  .work-grid-layout { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .work-grid-layout { grid-template-columns: 1fr; }
+}

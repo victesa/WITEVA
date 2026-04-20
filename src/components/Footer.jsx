@@ -55,15 +55,14 @@ const Footer = () => {
         <div className="footer-col contact-col">
           <h3>Contact Us</h3>
           <div className="contact-item">
-            <span>📍</span>
             <p className="footer-text">Nairobi, Kenya<br/>Tea Board Building, 3rd Floor</p>
           </div>
-          <div className="contact-item">
-            <span>✉</span>
+          <div className="contact-item" style={{display: "flex", flexDirection: "row", alignItems: "center"}}>
+            <span>Email: </span>
             <p className="footer-text">info@witeva.org</p>
           </div>
-          <div className="contact-item">
-            <span>📞</span>
+          <div className="contact-item" style={{display: "flex", flexDirection: "row", alignItems: "center"}}>
+            <span>Telephone:</span>
             <p className="footer-text">+254 700 123 456</p>
           </div>
         </div>

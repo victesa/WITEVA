@@ -1,0 +1,24 @@
+/* =========================================================
+   PAGE WRAPPER (Global Background Pattern)
+========================================================= */
+.work-page-container {
+  position: relative;
+  /* Ensures the container respects the z-index hierarchy */
+  z-index: 1; 
+}
+
+.work-page-container::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* Stretches to fill the ENTIRE page top to bottom */
+  
+  background-image: url("../../assets/background.png");
+  background-repeat: repeat;
+  opacity: 0.19;
+  
+  /* Pushes the pattern entirely behind the Hero and the Cards */
+  z-index: -1; 
+  pointer-events: none;
+  margin: 0;
+  padding: 0;
+}

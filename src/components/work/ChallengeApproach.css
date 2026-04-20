@@ -1,0 +1,111 @@
+.challenge-section {
+  padding: 120px 0;
+  background-color: #ffffff; 
+  width: 100%;
+  /* Required to contain the pseudo-element */
+  position: relative;
+  overflow: hidden;
+}
+
+.challenge-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  /* Your Image Here */
+  background-image: url('../../assets/background.png');
+  background-position: center;
+  
+  /* Adjust this to make the background more or less subtle */
+  opacity: 0.1; 
+  
+  /* Keeps it behind the text */
+  z-index: 0; 
+}
+
+.challenge-container {
+  width: 92%;
+  max-width: 1440px;
+  margin: 0 auto;
+  /* Ensures content stays above the background */
+  position: relative;
+  z-index: 1;
+}
+
+/* --- The rest of your code remains exactly as you had it --- */
+.challenge-header {
+  margin-bottom: 60px;
+  max-width: 900px;
+}
+
+.challenge-subtitle {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #5b8c5a;
+  margin-bottom: 16px;
+}
+
+.challenge-title {
+  font-size: 44px;
+  color: #111827;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.challenge-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 80px; 
+  align-items: start;
+}
+
+.column-label {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.column-label::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background-color: #5b8c5a;
+}
+
+.challenge-column p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #4b5563;
+}
+
+.accent-column {
+  background-color: #f7fbf8; 
+  padding: 40px;
+  border-radius: 16px;
+  margin-top: -40px; 
+}
+
+@media (max-width: 992px) {
+  .challenge-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .accent-column {
+    margin-top: 0;
+    padding: 0;
+    background-color: transparent;
+  }
+}

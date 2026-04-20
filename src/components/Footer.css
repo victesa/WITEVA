@@ -1,8 +1,8 @@
 .main-footer {
   background-color: #081d0c;
-  color: #ffffff;
-  padding: 80px 0 0 0;
-  font-family: var(--sans);
+  color: white;
+  font-size: 14px;
+  padding-top: 80px;
 }
 
 .footer-container {
