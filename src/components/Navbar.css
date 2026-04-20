@@ -19,7 +19,7 @@
 .navbar-logo a {
   font-size: 24px;
   font-weight: 800;
-  color: #0b2e13; 
+  color: #025c20; 
   text-decoration: none;
   letter-spacing: 1px;
 }
@@ -43,6 +43,13 @@
   padding: 0;
   align-items: center;
   gap: 24px; 
+}
+
+.navbar-logo{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
 }
 
 /* Individual Links */
@@ -117,7 +124,7 @@
 }
 
 .btn-support {
-  background-color: #123F19; 
+  background-color: #025c20; 
   color: #ffffff;
   border: none;
   padding: 12px 24px;

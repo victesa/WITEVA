@@ -1,11 +1,11 @@
 /* 1. The wrapper sits naturally in the document flow */
-.about-page-container {
+.work-page-container {
   position: relative;
   /* NO min-height here to prevent pushing other components down */
 }
 
 /* 2. This makes the background fill exactly the height of the hero + its margin */
-.about-page-container::before {
+.work-page-container::before {
   content: "";
   position: absolute;
   top: 0;
@@ -21,12 +21,12 @@
 }
 
 /* 3. The hero section maintains its original size and spacing */
-.about-hero {
+.work-hero {
   position: relative;
   z-index: 1;
   height: 45vh;
   min-height: 350px;
-  background-image: url('../../assets/header.jpg');
+  background-image: url('../../assets/about_header.jpg');
   background-size: cover;
   background-position: center;
   border-bottom-left-radius: 40px;
@@ -34,7 +34,7 @@
   overflow: hidden;
 }
 
-.about-hero-overlay {
+.work-hero-overlay {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.4);
@@ -43,7 +43,7 @@
   padding-left: 10%;
 }
 
-.about-hero h1 {
+.work-hero h1 {
   color: #ffffff;
   font-family: var(--heading);
   font-size: 56px;

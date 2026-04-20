@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Navbar.css';
+import logo from "../assets/witeva_logo.jpg"
 
 const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -12,6 +13,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
+        <img src={logo}/>
         <a href="/">WITEVA</a>
       </div>
 
@@ -44,7 +46,7 @@ const Navbar = () => {
               <ul className="dropdown-menu">
                 {/* FIXED: Added the #who-we-are anchor tag */}
                 <li><a href="/about-us#who-we-are">Our Story</a></li>
-                <li><a href="/mission-values">Mission & Values</a></li>
+                <li><a href="/about-us#our-origin">Mission & Values</a></li>
                 <li><a href="/leadership">Our Leadership</a></li>
                 <li><a href="/reach">Reach</a></li>
               </ul>

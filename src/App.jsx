@@ -2,7 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
-import About from './About';
+import About from './pages/About';
+import OurWork from './components/work/OurWork';
 // Import your other pages here
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/about-us" element={<About/>}/>
+          <Route path='/our-work' element={<OurWork/>}/>
           {/* Add the rest of your routes to match the navbar links */}
         </Routes>
       </Layout>

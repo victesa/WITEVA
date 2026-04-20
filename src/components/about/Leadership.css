@@ -1,0 +1,127 @@
+.leadership-section {
+  padding: 100px 0;
+  background-color: #ffffff;
+  position: relative; /* Required for the absolute pseudo-element */
+  overflow: hidden;   /* Keeps the background within the section bounds */
+  z-index: 1;
+}
+
+.leadership-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../assets/background.png");
+  background-position: center;
+  opacity: 0.19;           /* Adjust this value (0.0 to 1.0) */
+  z-index: -1;            /* Places the background behind the content */
+}
+
+.leadership-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.leadership-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 80px auto;
+}
+
+.leadership-header h2 {
+  font-family: var(--heading);
+  font-size: 42px;
+  color: #123f19;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.leadership-header p {
+  font-size: 18px;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* --- The Grid --- */
+.leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.leader-card {
+  text-align: left;
+}
+
+.leader-image-wrapper {
+  width: 100%;
+  aspect-ratio: 4 / 5; /* Professional portrait ratio */
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #f3f4f6; /* Light grey background like mockup */
+  margin-bottom: 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.leader-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* If your photos have backgrounds, center is best. 
+     If they are 'headshots' on white, top works better */
+  object-position: center; 
+}
+
+.leader-name {
+  font-family: var(--heading);
+  font-size: 20px;
+  color: #111827;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.leader-role {
+  font-size: 16px;
+  color: #5b8c5a; /* Action Green */
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.leader-bio {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #6b7280;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1024px) {
+  .leadership-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 24px;
+  }
+  
+  .leadership-header h2 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .leadership-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .leadership-container {
+    padding: 0 20px;
+  }
+
+  .leadership-header {
+    text-align: left;
+    margin-bottom: 40px;
+  }
+}

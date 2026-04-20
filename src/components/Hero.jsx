@@ -28,7 +28,7 @@ const Hero = () => {
           <div className="hero-actions">
             <button className="btn-primary">Explore Our Programs</button>
             <a href="/membership" className="link-secondary">
-              View Membership Benefits <span>&rarr;</span>
+              Supoort the Mission <span>&rarr;</span>
             </a>
           </div>
         </div>
