@@ -29,7 +29,7 @@ const OurReach = () => {
   ];
 
   return (
-    <section className="reach-section">
+    <section className="reach-section" id='counties'>
       <div className="reach-container">
         
         <header className="reach-header">

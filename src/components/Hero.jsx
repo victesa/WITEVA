@@ -4,8 +4,15 @@ import potrait from "../assets/farmer_potrait.png"
 
 // Ensure your map image is saved as kenya-map.png inside src/assets/
 import kenyaMap from '../assets/kenya-map.png'; 
+import { useNavigate, Link } from 'react-router-dom';
 
 const Hero = () => {
+  const navigate = useNavigate();
+
+  const handleExploreClick = () => {
+    // Navigates to the About page with a hash
+    navigate('/our-work#programs');
+  };
   return (
     <section className="hero">
       {/* Background graph-paper grid */}
@@ -25,11 +32,15 @@ const Hero = () => {
             WITEVA facilitates the professional advancement and economic integration of women within the global tea economy. We ensure women are recognized as strategic leaders from cultivation to consumption.
           </p>
           
-          <div className="hero-actions">
-            <button className="btn-primary">Explore Our Programs</button>
-            <a href="/membership" className="link-secondary">
-              Supoort the Mission <span>&rarr;</span>
-            </a>
+          <div className='hero-actions'>
+            <button className="btn-primary" onClick={handleExploreClick}>
+              Explore Our Programs
+            </button>
+            
+            {/* Using Link instead of <a> for faster internal navigation */}
+            <Link to="/support-mission" className="link-secondary">
+              Support the Mission <span>&rarr;</span>
+            </Link>
           </div>
         </div>
 

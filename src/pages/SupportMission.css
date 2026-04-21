@@ -1,0 +1,287 @@
+/* --- Base Page Layout & Reset --- */
+.support-page {
+  padding: 100px 0;
+  position: relative;
+  z-index: 1;
+  background-color: #ffffff;
+  overflow-x: hidden; /* Prevent horizontal scroll on mobile */
+  /* Ensure all elements within this page respect padding in their width */
+  box-sizing: border-box;
+}
+
+.support-page *, 
+.support-page *::before, 
+.support-page *::after {
+  box-sizing: inherit;
+}
+
+/* --- Background Pattern --- */
+.support-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../assets/background.png");
+  background-repeat: repeat;
+  opacity: 0.19;
+  z-index: -1; 
+  pointer-events: none;
+}
+
+.support-container {
+  width: 92%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* --- Header Section --- */
+.support-header {
+  text-align: center;
+  max-width: 850px;
+  margin: 0 auto 100px auto;
+}
+
+.support-tag {
+  display: block;
+  font-size: 12px;
+  font-weight: 800;
+  color: #014d36;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.support-header h1 {
+  font-size: 52px;
+  font-weight: 800;
+  color: #111827;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  margin-bottom: 24px;
+}
+
+.support-lead {
+  font-size: 20px;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* --- Support Pillars (Get Involved Cards) --- */
+.support-pillars {
+  display: grid;
+  /* auto-fit + minmax handles responsiveness automatically */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 120px;
+  width: 100%;
+}
+
+.pillar {
+  text-align: center;
+  padding: 50px 30px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  border-top: 5px solid #014d36; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  height: 100%; /* Keeps cards in the same row equal height */
+}
+
+.pillar:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(1, 77, 54, 0.08);
+  border-color: #014d36;
+}
+
+.pillar-icon {
+  color: #014d36;
+  margin-bottom: 30px;
+  display: inline-flex;
+  padding: 20px;
+  background: #f0fdf4;
+  border-radius: 50%;
+  flex-shrink: 0; /* Keeps icon circular on mobile */
+}
+
+.pillar h3 {
+  font-size: 22px;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 15px;
+  letter-spacing: -0.5px;
+}
+
+.pillar p {
+  font-size: 16px;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --- The Form Section --- */
+.support-form-section {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.form-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 60px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.04);
+}
+
+.form-intro {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.form-intro h2 {
+  font-size: 32px;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 12px;
+}
+
+.form-intro p {
+  color: #6b7280;
+  font-size: 16px;
+}
+
+/* --- Form Fields --- */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.input-group {
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 800;
+  color: #111827;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+.input-group input, 
+.input-group select, 
+.input-group textarea {
+  width: 100%; /* box-sizing ensures this doesn't overflow */
+  padding: 14px 18px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 16px;
+  background: #ffffff;
+  transition: border-color 0.2s ease;
+  max-width: 100%;
+}
+
+.input-group input:focus, 
+.input-group textarea:focus {
+  outline: none;
+  border-color: #014d36;
+  box-shadow: 0 0 0 3px rgba(1, 77, 54, 0.1);
+}
+
+.support-submit-btn {
+  width: 100%;
+  background: #014d36;
+  color: #ffffff;
+  padding: 18px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: background 0.3s ease;
+}
+
+.support-submit-btn:hover {
+  background: #111827;
+}
+
+/* --- RESPONSIVE BREAKPOINTS --- */
+
+@media (max-width: 1024px) {
+  .support-header h1 { 
+    font-size: 42px; 
+  }
+  
+  .support-pillars {
+    /* Explicitly drop to 2 columns on tablets */
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .form-card { 
+    padding: 40px 30px; 
+  }
+}
+
+@media (max-width: 768px) {
+  .support-page {
+    padding: 60px 0;
+  }
+
+  .support-header {
+    margin-bottom: 60px;
+  }
+
+  .support-header h1 {
+    font-size: 32px;
+    letter-spacing: -1px;
+  }
+
+  .support-pillars {
+    /* Single column for mobile */
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .pillar {
+    padding: 35px 20px;
+    transform: none !important; /* Disabling lift for touch stability */
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .form-card {
+    padding: 30px 20px;
+    border-radius: 12px;
+  }
+
+  .form-intro h2 {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 480px) {
+  .support-container {
+    width: 90%;
+  }
+
+  .support-header h1 {
+    font-size: 28px;
+  }
+
+  .pillar h3 {
+    font-size: 19px;
+  }
+}

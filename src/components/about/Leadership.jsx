@@ -32,7 +32,7 @@ const Leadership = () => {
   ];
 
   return (
-    <section className="leadership-section">
+    <section className="leadership-section" id='leadership'>
       <div className="leadership-container">
         
         <header className="leadership-header">

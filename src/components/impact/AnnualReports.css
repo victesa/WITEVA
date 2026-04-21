@@ -1,0 +1,126 @@
+.reports-section {
+  padding: 100px 0;
+  background-color: #ffffff;
+  width: 100%;
+}
+
+.reports-container {
+  width: 92%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* --- Section Header --- */
+.reports-header {
+  margin-bottom: 60px;
+  border-left: 4px solid #014d36; /* WITEVA Green accent */
+  padding-left: 30px;
+}
+
+.reports-tag {
+  display: block;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #014d36;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+}
+
+.reports-header h2 {
+  font-size: 42px;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 15px;
+  letter-spacing: -1px;
+}
+
+.reports-lead {
+  font-size: 18px;
+  max-width: 700px;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* --- The Reports Grid --- */
+.reports-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.report-tile {
+  background: #f9fafb; /* Light professional grey */
+  padding: 40px;
+  border: 1px solid #e5e7eb;
+  border-top: 4px solid #014d36; /* High-end top border accent */
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.report-tile:hover {
+  background: #ffffff;
+  border-color: #014d36;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+}
+
+.tile-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.tile-icon {
+  color: #9ca3af;
+}
+
+.tile-year {
+  font-size: 14px;
+  font-weight: 800;
+  color: #014d36;
+  background: #f0fdf4;
+  padding: 4px 12px;
+  border-radius: 4px;
+}
+
+.tile-body h3 {
+  font-size: 22px;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 12px;
+}
+
+.tile-body p {
+  font-size: 15px;
+  color: #6b7280;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.tile-link {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #014d36;
+  text-decoration: none;
+}
+
+.tile-link:hover {
+  text-decoration: underline;
+}
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+  .reports-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 640px) {
+  .reports-grid { grid-template-columns: 1fr; }
+  .reports-header h2 { font-size: 32px; }
+}

@@ -1,0 +1,101 @@
+.impact-hero {
+  position: relative;
+  width: 100%;
+  height: 70vh; /* Shorter than a Home Hero, but taller than a standard header */
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  background-color: #111827; /* Fallback dark color */
+  overflow: hidden;
+}
+
+/* Using your preferred ::before method for the background image */
+.impact-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  /* Replace with a vibrant photo of women in the field or a recent workshop */
+  background-image: linear-gradient(
+    to right, 
+    rgba(0, 0, 0, 0.8) 0%, 
+    rgba(0, 0, 0, 0.2) 100%
+  ), url('../../assets/impact.jpg');
+  
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+.impact-hero-container {
+  width: 92%;
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2; /* Sits above the background image */
+}
+
+.impact-hero-content {
+  max-width: 700px; /* Limits width for readability */
+}
+
+.impact-hero-label {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #8dbb8c; /* Lighter version of your brand green for dark BG */
+  margin-bottom: 20px;
+}
+
+.impact-hero-title {
+  font-size: 64px;
+  color: #ffffff;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  letter-spacing: -1px;
+}
+
+.impact-hero-description {
+  font-size: 20px;
+  color: #e5e7eb; /* Soft light grey */
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN
+========================================================= */
+@media (max-width: 1024px) {
+  .impact-hero-title {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .impact-hero {
+    height: 60vh;
+    padding-top: 60px; /* Space for mobile nav */
+  }
+
+  .impact-hero-title {
+    font-size: 38px;
+  }
+
+  .impact-hero-description {
+    font-size: 18px;
+  }
+  
+  /* On mobile, center the overlay slightly more for a balanced feel */
+  .impact-hero::before {
+    background-image: linear-gradient(
+      rgba(0, 0, 0, 0.7), 
+      rgba(0, 0, 0, 0.7)
+    ), url('../../assets/impact.jpg');
+  }
+}

@@ -15,7 +15,7 @@
   height: 100%;
   background-image: url("../assets/background.png");
   background-position: center;
-  opacity: 0.19;           /* Adjust this value (0.0 to 1.0) */
+  opacity: 0.1;           /* Adjust this value (0.0 to 1.0) */
   z-index: -1;            /* Places the background behind the content */
 }
 

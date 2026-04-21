@@ -1,0 +1,121 @@
+.featured-story-section {
+  padding: 40px 0; /* Reduced section padding to keep things tight */
+  background-color: transparent;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.featured-container {
+  width: 92%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+
+/* --- The Master Card Link --- */
+.featured-card {
+  display: flex;
+  align-items: stretch;
+  background: #f9fafb;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  /* Removed min-height so the card only grows as much as the text needs */
+}
+
+.featured-card:hover {
+  border-color: #014d36;
+  background: #ffffff;
+}
+
+/* --- Image Side --- */
+.featured-image-side {
+  flex: 0 0 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+.featured-image-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.featured-tag {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: #014d36;
+  color: #ffffff;
+  padding: 5px 12px;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* --- Content Side --- */
+.featured-content-side {
+  flex: 1;
+  padding: 30px 40px; /* Tightened padding to eliminate the "empty" look */
+  display: flex;
+  flex-direction: column;
+  /* Changed from center to flex-start to remove top/bottom gaps */
+  justify-content: flex-start; 
+}
+
+.featured-date {
+  font-size: 12px;
+  font-weight: 700;
+  color: #6b7280;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.featured-headline {
+  font-size: 26px; /* Slightly smaller to keep it dense */
+  font-weight: 800;
+  color: #111827;
+  line-height: 1.2;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.featured-excerpt {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #4b5563;
+  margin-bottom: 20px;
+}
+
+.featured-footer {
+  margin-top: auto; /* Pushes the button to the bottom if there is any extra space */
+}
+
+.read-more-btn {
+  font-size: 14px;
+  font-weight: 800;
+  color: #014d36;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+@media (max-width: 992px) {
+  .featured-card {
+    flex-direction: column;
+  }
+  
+  .featured-image-side {
+    height: 250px; /* Shorter image for mobile to keep it tight */
+  }
+  
+  .featured-content-side {
+    padding: 24px;
+  }
+}

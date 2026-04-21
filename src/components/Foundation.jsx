@@ -1,14 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Foundation.css';
-// Import your tea leader image
-// import teaLeaderImg from '../assets/tea-leader.jpg';
 
 const Foundation = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="foundation-section">
       <div className="foundation-container">
         
-        {/* Section Header */}
         <h2 className="foundation-main-title">THE FOUNDATION</h2>
 
         {/* Mission & Vision Cards */}
@@ -36,8 +36,15 @@ const Foundation = () => {
 
         {/* Top Buttons */}
         <div className="foundation-actions">
-          <button className="btn-story">Our Story</button>
-          <button className="btn-counties">The 21 Counties</button>
+          {/* Navigates to the top of About Us */}
+          <button className="btn-story" onClick={() => navigate('/about-us')}>
+            Our Story
+          </button>
+          
+          {/* Navigates to About Us and tells it to scroll to #counties */}
+          <button className="btn-counties" onClick={() => navigate('/about-us#counties')}>
+            The 19 Counties
+          </button>
         </div>
 
         {/* Video / Feature Image Block */}
@@ -48,14 +55,18 @@ const Foundation = () => {
             className="video-thumb"
           />
           
-          {/* Play Button Overlay */}
-          <div className="play-button-overlay">
+          {/* YouTube Play Button: External Link */}
+          <a 
+            href="https://www.youtube.com/@YourWitevaChannel" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="play-button-overlay"
+          >
             <div className="play-circle">
               <div className="play-triangle"></div>
             </div>
-          </div>
+          </a>
 
-          {/* Caption Overlay */}
           <div className="video-caption">
             Beatrice Tonui | ChairLady
           </div>
@@ -63,7 +74,7 @@ const Foundation = () => {
 
         {/* Final Bottom Action */}
         <div className="learn-more-container">
-          <button className="btn-learn-more">
+          <button className="btn-learn-more" onClick={() => navigate('/our-work')}>
             LEARN MORE <span>&rsaquo;</span>
           </button>
         </div>

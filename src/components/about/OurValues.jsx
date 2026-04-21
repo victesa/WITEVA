@@ -1,7 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'; // Import the hook
 import './OurValues.css';
 
 const OurValues = () => {
+  const navigate = useNavigate(); // Initialize navigation
+
   const values = [
     {
       title: "Dignity",
@@ -36,7 +39,7 @@ const OurValues = () => {
   ];
 
   return (
-    <section className="values-section">
+    <section className="values-section" id='values'>
       <div className="values-container">
         
         <header className="values-header">
@@ -63,8 +66,21 @@ const OurValues = () => {
         </div>
 
         <div className="values-footer-actions">
-          <button className="btn-get-involved-solid">Get Involved</button>
-          <button className="btn-contact-outline">Contact Us</button>
+          {/* Navigates to the Support page we built earlier */}
+          <button 
+            className="btn-get-involved-solid" 
+            onClick={() => navigate('/support-mission')}
+          >
+            Get Involved
+          </button>
+          
+          {/* Navigates to the Contact page */}
+          <button 
+            className="btn-contact-outline" 
+            onClick={() => navigate('/contact')}
+          >
+            Contact Us
+          </button>
         </div>
 
       </div>

@@ -1,7 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'; // Import the hook
 import './CTA.css';
 
 const CTA = () => {
+  const navigate = useNavigate(); // Initialize the navigate function
+
   return (
     <section className="cta-section">
       <div className="cta-card">
@@ -15,7 +18,13 @@ const CTA = () => {
         </div>
 
         <div className="cta-actions">
-          <button className="btn-get-involved">GET INVOLVED</button>
+          {/* Add the onClick handler to navigate to the support-mission page */}
+          <button 
+            className="btn-get-involved" 
+            onClick={() => navigate('/support-mission')}
+          >
+            GET INVOLVED
+          </button>
         </div>
       </div>
     </section>

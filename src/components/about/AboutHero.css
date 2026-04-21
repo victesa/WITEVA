@@ -15,7 +15,7 @@
   height: calc(45vh + 80px); 
   background-image: url("../../assets/background.png");
   background-repeat: repeat;
-  opacity: 0.19;
+  opacity: 0.1;
   z-index: 0;
   pointer-events: none;
 }

@@ -1,0 +1,258 @@
+.contact-page {
+  padding: 100px 0;
+  min-height: 80vh;
+}
+
+.contact-page::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* Stretches to fill the ENTIRE page top to bottom */
+  
+  background-image: url("../assets/background.png");
+  background-repeat: repeat;
+  opacity: 0.12;
+  
+  /* Pushes the pattern entirely behind the Hero and the Cards */
+  z-index: -1; 
+  pointer-events: none;
+  margin: 0;
+  padding: 0;
+}
+
+.contact-container {
+  width: 92%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.contact-split {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* --- Left Column --- */
+.info-pill {
+  color: #014d36;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.contact-main-title {
+  font-size: 48px;
+  font-weight: 800;
+  color: #111827;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  letter-spacing: -1.5px;
+}
+
+.contact-description {
+  font-size: 18px;
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 50px;
+  max-width: 500px;
+}
+
+.info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.info-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.icon-circle {
+  width: 44px;
+  height: 44px;
+  background: #f0fdf4;
+  color: #014d36;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.text-box label {
+  display: block;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #9ca3af;
+  margin-bottom: 4px;
+}
+
+.text-box p {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* --- The Clean Card --- */
+.contact-card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e5e7eb; /* Balanced, 4-sided border */
+}
+
+.card-inner {
+  padding: 50px;
+}
+
+.card-inner h2 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 32px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.input-group {
+  margin-bottom: 24px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.input-group input, 
+.input-group select, 
+.input-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 15px;
+  background: #ffffff;
+}
+
+.input-group input:focus, 
+.input-group textarea:focus {
+  outline: none;
+  border-color: #014d36;
+  box-shadow: 0 0 0 3px rgba(1, 77, 54, 0.1);
+}
+
+.witeva-submit-btn {
+  width: 100%;
+  background: #014d36;
+  color: #ffffff;
+  padding: 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.witeva-submit-btn:hover {
+  background: #111827;
+}
+
+
+/* --- RESPONSIVE MEDIA QUERIES --- */
+
+/* Tablets & Small Laptops (under 1024px) */
+@media (max-width: 1024px) {
+  .contact-page {
+    padding: 60px 0;
+  }
+
+  .contact-split {
+    grid-template-columns: 1fr; /* Stacks the info and the card */
+    gap: 60px;
+    align-items: flex-start;
+  }
+
+  .contact-info-block {
+    text-align: center;
+  }
+
+  .contact-description {
+    margin: 0 auto 50px auto; /* Centers the text block */
+  }
+
+  .info-list {
+    align-items: center; /* Centers the contact details */
+    text-align: left;
+  }
+
+  .contact-main-title {
+    font-size: 38px;
+  }
+}
+
+/* Mobile Devices (under 768px) */
+@media (max-width: 768px) {
+  .contact-main-title {
+    font-size: 32px;
+    letter-spacing: -1px;
+    text-align: left;
+  }
+
+  .card-inner {
+    padding: 30px 20px; /* Reduces padding so the form has more room */
+  }
+
+  .form-row {
+    grid-template-columns: 1fr; /* Stacks 'Full Name' and 'Email' */
+    gap: 0; /* Let input-group margins handle the spacing */
+  }
+
+  .contact-container {
+    width: 90%; /* Slight more margin for small screens */
+  }
+
+  .info-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+  }
+}
+
+/* Very Small Phones */
+@media (max-width: 480px) {
+  .contact-page {
+    padding: 40px 0;
+  }
+
+  .contact-main-title {
+    font-size: 28px;
+  }
+
+  .witeva-submit-btn {
+    font-size: 14px;
+    padding: 14px;
+  }
+
+  .contact-main-title{
+    text-align: left;
+  }
+}

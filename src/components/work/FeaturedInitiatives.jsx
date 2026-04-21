@@ -22,7 +22,7 @@ const FeaturedInitiatives = () => {
   ];
 
   return (
-    <section className="featured-initiatives-section">
+    <section className="featured-initiatives-section" id='programs'>
       <div className="initiatives-container">
         
         {/* Section Header */}
